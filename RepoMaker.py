@@ -5,7 +5,7 @@ name = input("Repo name --> ")
 state = int(input("Private or Public ? 0 or 1 --> "))
 description = input("Describe your repo, empty if not --> ")
 
-TOKEN = os.environ['GITHUB_TOKEN']
+TOKEN = os.environ['GITHUB_TOKEN'] # YOUR TOKEN GOES HERE
 URL = "https://api.github.com/user/repos"
 
 HEADERS = {
@@ -17,7 +17,7 @@ HEADERS = {
 
 DATA = {
     "name": name,
-    "private": False if state else True,
+    "private": state,
     "description": description,    
     
 }
